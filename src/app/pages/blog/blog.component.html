@@ -1,0 +1,36 @@
+
+<form [formGroup]="blogForm" class="blog-form">
+  <h1>Új blog post</h1>
+  <mat-form-field>
+    <input matInput formControlName="title" type="text" placeholder="Cím">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="description" type="text" placeholder="Fejléc">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="content" type="text" placeholder="Context">
+  </mat-form-field>
+  <span>
+        <button mat-raised-button color="prime" (click)="addBlog()">
+            Blog post hozzáadása
+        </button>
+    </span>
+</form>
+
+<p>Post-ok:</p>
+<ng-container *ngFor="let blog of blogs | async">
+  <form class="blog-form-update">
+    <mat-form-field>
+      <input matInput type="text" value="{{ blog.title }}">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" value="{{ blog.description }}">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" value="{{ blog.content }}">
+    </mat-form-field>
+    <button mat-raised-button color="prime" type="submit" (click)="update(blog, blog.id)">Frissítés</button>
+    <button mat-raised-button color="prime" (click)="delete(blog.id)">Törlés</button>
+  </form>
+</ng-container>
+

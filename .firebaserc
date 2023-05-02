@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "musical-blog": {
+      "hosting": {
+        "musical-blog": [
+          "musical-blog"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "musical-blog"
+  }
+}

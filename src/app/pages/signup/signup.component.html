@@ -1,0 +1,25 @@
+
+<form [formGroup]="signupForm" class="signup-form">
+  <h1>Sign-up</h1>
+  <mat-form-field>
+    <input matInput formControlName="username" type="text" placeholder="Felhasználónév">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput formControlName="email" type="email" placeholder="example@example.com">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput formControlName="password" type="password" placeholder="Jelszó">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput formControlName="password2" type="password" placeholder="Jelszó mégegyszer">
+  </mat-form-field>
+  <br>
+  <span>
+        <button mat-raised-button color="prime" (click)="signUp()">
+            Sign-up
+        </button>
+    </span>
+</form>
